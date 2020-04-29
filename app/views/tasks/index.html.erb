@@ -4,7 +4,7 @@
    <p>
     タスク名：<%= task.name %></br>
     期限：<%= task.time %></br>
-    担当者：No.<%= task.user.id %>
+    <%= task.user.nickname.present? ? "担当者： #{task.user.nickname}" : "登録No.#{task.user.id}" %>
    </p>
    <p>
       <%= link_to "上記を削除", task_path(task), method: :delete, data: {confirm: "削除しますか?"} %>
