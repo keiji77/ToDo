@@ -1,0 +1,7 @@
+<h1>新規登録</h1>
+<%= form_with model: @task, local: true do |f| %>
+    <p>タスク名： <%= f.text_field :name %></p>
+    <p>期限： <%= f.date_select :time, 
+    use_month_numbers: true  %></p>
+    <%= f.submit "送信" %>
+<% end %>

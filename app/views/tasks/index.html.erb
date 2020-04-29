@@ -1,0 +1,15 @@
+<%= link_to "投稿画面へ", new_task_path %>
+<% if user_signed_in? %>
+  <% @tasks.each do |task| %>
+   <p>
+     タスク名：<%= task.name %></br>
+      期限：<%= task.time %></br>
+   </p>
+   <p>
+      <%= link_to "上記を削除", task_path(task), method: :delete, data: {confirm: "削除しますか?"} %>
+      <%= link_to "上記を編集", edit_task_path(task), method: :get %>
+   </p>
+  <% end %>
+<% else %>
+  <p>ログインしてください</p>
+<% end %>
