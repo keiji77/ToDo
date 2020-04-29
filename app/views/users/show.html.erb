@@ -1,0 +1,6 @@
+<% @user.tasks.each do |task| %>
+  <p>
+     タスク名：<%= task.name %></br>
+      期限：<%= task.time %>
+   </p>
+<% end %>

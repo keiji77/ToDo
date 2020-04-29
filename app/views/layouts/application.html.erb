@@ -14,6 +14,7 @@
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <%= link_to "一覧画面へ", tasks_path %>
       <%= link_to "投稿画面へ", new_task_path %>
+      <%= link_to "マイページへ", user_path(current_user.id) %>
     <% else %>
       <%= link_to "ログインする", new_user_session_path, class: 'post' %>
       <%= link_to "新規登録する", new_user_registration_path, class: 'post' %>

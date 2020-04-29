@@ -10,7 +10,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(task_params)
+    Task.create(name: task_params[:name], time: task_params[:time], user_id: current_user.id)
     redirect_to action: :index
   end
 
